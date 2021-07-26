@@ -151,13 +151,18 @@ h3 {
     justify-content: center;
     padding: 5rem;
 }
+.testimonials p {
+    padding-right: 4rem;
+    text-align: center;
+}
 #testimonials img {
     border-radius: 7rem;
 }
 .tutorials, .courses {
     padding: 1rem 3rem 3rem 4rem;
-    word-spacing: 1rem;
-    line-height: 1.5rem;
+    word-spacing: 0.5rem;
+    line-height: 1.3rem;
+    font-size: 1rem
 }
 .dropdown-content {
     display: none;
@@ -201,6 +206,33 @@ h3 {
     box-shadow: grey 2px 2px;
     padding: 0.5rem;
   }
+  #shake {
+      animation: imageshake 3s linear 0s infinite alternate;
+      z-index: -1;
+  }
+
+
+  .plane {
+      z-index: -10;
+      height: 10vh;
+      width: 1vw;
+      position: absolute;
+      bottom: 10rem;
+      animation: moving 4s ease-in-out 2s infinite normal;
+  }
+
+  @keyframes moving {
+      0% {left: 0px;
+          transform: rotate(10deg);}
+      100% {left: 100%;
+          transform: rotate(-10deg);}
+  }
+
+  @keyframes imageshake {
+    0% {transform: rotate(5deg);}
+    100% {transform: rotate(-5deg);}
+}
+
   /* for screen size below that of iphone X */
   @media screen and (max-width: 374px) {
       body {
@@ -228,7 +260,9 @@ h3 {
     .image {
         height: 200px;
         width: 70vw;
+       
     }
+    
     #mission {
         display: block;
     }
@@ -240,6 +274,7 @@ h3 {
     }
   }
 
+ /* for screen size including iphone x and above on mobile devices */
   @media screen and (min-width: 375px) and (max-width: 500px) {
     body {
         font-size: 1.5rem;
